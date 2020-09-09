@@ -19,7 +19,18 @@ module.exports = {
                 launch_url: "https://www.ze.delivery/",
      
             desiredCapabilities: {
-                browserName: 'chrome'
+                browserName: 'chrome',
+                'goog:chromeOptions':{
+                args: [
+                    'start-maximized', '--disable-infobars', '--disable-notifications', '--ignore-ssl-errors', "--allow-insecure-localhost"
+                ],
+
+                
+                excludeSwitches: [
+                    'enable-automation'
+                ],
+                useAutomationExtension: false
+                }
             }
         
         },
@@ -58,6 +69,11 @@ module.exports = {
             launch_url: "https://www.ze.delivery/",
             desiredCapabilities: {
                 browserName: 'firefox'
+                // 'firefoxOptions': {
+                //  args: [
+                    
+                // ]}
+                ,
             }
             }
         },

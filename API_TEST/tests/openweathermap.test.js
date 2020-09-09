@@ -14,14 +14,38 @@ const request = require('supertest')
         .expect(200)
         .then(response => {
             expect(response.body.sys.country).toBe('BR')
-            expect(response.body.sys)
         })
     });
 
 
-    
+
+    it('Valida tempo atual informando nome da cidade e código do país', function() {
+       });
+  
+    it('Valida tempo atual informando nome da cidade e código do estado (somente EUA)', function() {
+      });
 
 
+    it('Valida tempo atual informando código do país', function() {
+       });
+
+    it('Valida tempo atual por coordenada geográfica', function() {
+    });
+
+
+    it('Valida resposta por ZIP Code', function() {
+      });
+
+    it('Valida resposta para vários IDs de cidades', function() {
+      });
+
+
+    it('Valida resposta informando token inválido', function() {
+      });
+
+
+    it('Valida tempo atual com outra linguagem', function() {
+    });
 
 
 

@@ -28,6 +28,7 @@
     "supertest": "^4.0.2"
   },
   "dependencies": {
+    "gherkin": "^9.0.0",
     "jest": "^26.4.2",
     "npx": "^10.2.2"
   }
