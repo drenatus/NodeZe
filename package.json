@@ -1,0 +1,34 @@
+{
+  "name": "NodeTest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:E2E-chrome": "cross-env NIGHTWATCH_ENV=chrome npm test",
+    "test:E2E-firefox": "cross-env NIGHTWATCH_ENV=firefox npm test",
+    "test:API": "npx jest",
+    "test": "mkdirp report && cucumber-js --require cucumber.conf.js --require steps-definitions --format node_modules/cucumber-pretty --format json:report/cucumber_report.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "babel-preset-es2015": "^6.24.1",
+    "chromedriver": "^84.0.1",
+    "cross-env": "^7.0.2",
+    "cucumber": "^6.0.5",
+    "cucumber-html-reporter": "^5.2.0",
+    "cucumber-pretty": "^6.0.0",
+    "geckodriver": "^1.20.0",
+    "mkdirp": "^1.0.4",
+    "nightwatch": "^1.3.7",
+    "nightwatch-api": "^3.0.1",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "jest": "^26.4.2",
+    "npx": "^10.2.2"
+  }
+}
