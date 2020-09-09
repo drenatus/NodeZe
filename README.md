@@ -2,30 +2,17 @@
 
 Como rodar:
 
-Ter o Node instalado
+Ter o Node instalado - https://nodejs.org/
 
-Sugestão: abrir com VSCode
+Visual Studio Code instalado - https://code.visualstudio.com/  
 
-digitar no terminal:  
+Após abrir o projeto, digitar no terminal:
 
-Windows: 
+npm install (se for no linux: sudo npm install) e aguardar a instalação. 
 
-npm install 
 
-npm install chromedriver
+rodar testes E2E no Chrome: npm run test:E2E-chrome
 
-npm install geckodriver
+rodar testes E2E no Firefox: npm run test:E2E-firefox
 
-Linux: 
-
-sudo npm install 
-
-sudo npm install chromedriver
-
-sudo npm install geckodriver
-
-sudo npm install cross-env@latest --save-dev (apenas se der problemas de permissão ao rodar o E2E)
-
-sudo npm install mkdirp@latest --save-dev    (apenas se der problemas de permissão ao rodar o E2E)
-
-sudo npm install cucumber@latest --save-dev  (apenas se der problemas de permissão ao rodar o E2E)
+rodar testes de API: npx jest
