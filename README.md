@@ -25,7 +25,7 @@ Após abrir o projeto, digitar no terminal:
 
 npm install (se for no linux: sudo npm install) e aguardar a instalação.
 
-rodar testes E2E: npm run test:E2E-chrome
+rodar testes E2E: npm run test:E2E-chrome  (o relatório em HTML será gerado no final da execução e abrirá automaticamente)
 
 rodar testes da API Open Weather Map: npx jest
 
