@@ -1,5 +1,6 @@
 # Nightwatchjs.org Test Automation Repository
 
+
 Cenários:
 
 Cadastro - Essencial para qualquer cliente começar a utilizar os serviços do Zé. Uma experiência frustrante pode fazer um potencial usuário a desistir do serviço
@@ -27,3 +28,4 @@ npm install (se for no linux: sudo npm install) e aguardar a instalação.
 rodar testes E2E: npm run test:E2E-chrome
 
 rodar testes da API Open Weather Map: npx jest
+
