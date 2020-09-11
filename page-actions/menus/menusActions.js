@@ -15,6 +15,20 @@ module.exports = {
              .click('@firstbeeroption')
 },
 
+ searchProduct: (search) => {
+        return menuActions
+                 .waitForElementVisible('@searchfield',10000)
+                 .setValue('@searchfield',search)
+    },
+
+ clickSearchProduct: () => {
+        return menuActions
+                 .waitForElementVisible('@searchresult',10000)
+                 .click('@searchresult')
+    },
+
+    
+
  click6Un: () => {
     return menuActions
             .waitForElementVisible('@addAmount6',10000)

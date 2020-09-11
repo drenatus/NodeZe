@@ -8,6 +8,16 @@ module.exports = {
             locateStrategy: "id"
         },
 
+        searchfield: {
+            selector: "search-product-input",
+            locateStrategy: "id"
+        },
+
+        searchresult: {
+            selector: "search-product-list",
+            locateStrategy: "id"          
+        },
+
  
         addAmount6: {
             selector: "add-amount-6",
@@ -20,8 +30,6 @@ module.exports = {
             locateStrategy: "id"
         },
 
-
-        
 
     }
 }

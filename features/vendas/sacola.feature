@@ -16,7 +16,8 @@
  E clico no botão ENTRAR da pagina de login
  Então sou redirecionado para a Home Page, e vejo a mensagem 'Olá, Diogo'
  Quando clico na opção CERVEJAS
- E clico no produto Brahma Duplo Malte
+ E digito 'Budweiser 350' no campo de busca de produto
+ E clico no produto pesquisado
  E clico no botão + 6 un.
  E clico em ADICIONAR
  
@@ -26,7 +27,7 @@
  E clico no botão SELECIONAR FORMA DE PAGAMENTO
  E sou direcionado para a PÁGINA DE PAGAMENTO
  E clico na opção DINHEIRO
- Então vejo o campo VALOR DO SEU PEDIDO com o total de R$ '20,73'
+ Então vejo o campo VALOR DO SEU PEDIDO com o total de R$ '21,93'
 
 
 
