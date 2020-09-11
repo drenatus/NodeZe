@@ -1,6 +1,5 @@
 const { TestScheduler } = require("jest");
-const urlcurrent = 'https://api.openweathermap.org/data/2.5/weather?q='
-const urlforecast = 'http://api.openweathermap.org/data/2.5/forecast?q='
+const urlcurrent = 'https://api.openweathermap.org/data/2.5/weather?'
 const appid = '&appid=5b088a316d8b105237e0f02954c97942'
 const request = require('supertest')
 
@@ -9,140 +8,73 @@ const request = require('supertest')
 
 
     it('Valida tempo atual informando nome da cidade', function() {
-      return request(urlcurrent + 'brasilia' + appid)
+      return request(urlcurrent + 'q=brasilia' + appid)
         .get('')
         .expect(200)
         .then(response => {
             expect(response.body.sys.country).toBe('BR')
+            expect(response.body.name).toBe('Brasília')
         })
     });
 
 
-
     it('Valida tempo atual informando nome da cidade e código do país', function() {
+      return request(urlcurrent + 'q=curitiba' + ',BR' + appid)
+      .get('')
+      .expect(200)
+      .then(response => {
+          expect(response.body.sys.country).toBe('BR')
+          expect(response.body.name).toBe('Curitiba')
+      })
        });
+
+
+    it('Valida erro enviando nome da cidade e código de país inconsistente', function() {
+      return request(urlcurrent + 'q=curitiba' + ',GB' + appid)
+      .get('')
+      .expect(404)
   
-    it('Valida tempo atual informando nome da cidade e código do estado (somente EUA)', function() {
-      });
+         });
+  
 
-
-    it('Valida tempo atual informando código do país', function() {
+    it('Valida tempo atual informando id da cidade', function() {
+      return request(urlcurrent + 'id=3448439' + appid)
+      .get('')
+      .expect(200)
+      .then(response => {
+          expect(response.body.sys.country).toBe('BR')
+          expect(response.body.name).toBe('São Paulo')
+      })
        });
+
+
 
     it('Valida tempo atual por coordenada geográfica', function() {
+      return request(urlcurrent + 'lat=-22.902234&lon=-43.169884' + appid)
+      .get('')
+      .expect(200)
+      .then(response => {
+          expect(response.body.sys.country).toBe('BR')
+          expect(response.body.name).toBe('Rio de Janeiro')
+      })
     });
 
 
     it('Valida resposta por ZIP Code', function() {
+      return request(urlcurrent + 'zip=09000-000,br' + appid)
+      .get('')
+      .expect(200)
+      .then(response => {
+          expect(response.body.sys.country).toBe('BR')
+          expect(response.body.name).toBe('Santo André')
       });
-
-    it('Valida resposta para vários IDs de cidades', function() {
-      });
-
-
-    it('Valida resposta informando token inválido', function() {
-      });
-
-
-    it('Valida tempo atual com outra linguagem', function() {
     });
 
 
-
-     
-    // it('Valida cidade Sample', function() {
-    //   return request('https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=439d4b804bc8187953eb36d2a8c26a02')
-    //     .get('')
-    //     .expect(200)
-    //     .then(response => {
-    //         expect(response.body.sys.country).toBe('GB')
-    //     })
-    // });
-
-
-    // it('Acessar Openweather', function() {
-    //  return request('https://openweathermap.org')
-    //  .get('')
-    //  .expect(200)
-    //  })     
-
-
-  
-// 
-
-
-
-
-// test('Acessar Openweather com endereço inválido', () => {
-// return request.get('/erro').then(res => expect(res.status).toBe(404));     
-// });
-
-
-
-
-// describe('GET /users', function() {
-//   it('Valida país GB', function() {
-//     return request('http://api.openweathermap.org/data/2.5/weather?q=london&appid=5b088a316d8b105237e0f02954c97942')
-//       .get('/users')
-//       .set('Accept', 'application/json')
-//       .expect('Content-Type', /json/)
-//       .expect(200)
-//       .then(response => {
-//           expect(response.body.sys.country).toBe('GB')
-//       })
-//   });
-// });
-
-
-
-
-
-
-
-
-// test('Retornar cidade de Londres', () => {
-//  const obj = [ {country: 'GB', name: 'London'} ]; 
-// return request.get('/weather?q=London,uk&APPID=5b088a316d8b105237e0f02954c97942').then(res => expect(res.status).toBe(200).json(obj))
-// });
-
-
-
-// test('teste dog', () => {
-//       return request.get('/weather?q=London,uk&APPID=5b088a316d8b105237e0f02954c97942')
-//         .set('Accept', 'application/json')
-//         // .expect('Content-Type', /json/)
-//         .expect(200)
-//         .expect(response.body.country).toBe('GB')
-//         }
-//     );
-  
-
-
-
-
-
-
-
-
-// test('Acessar Openweather com endereço inválido', () => {
-// return request.get('/erro').then(res => expect(res.status).toBe(404));     
-// });
-
-
-// test('teste 222', () => {
-//     const obj = {name: 'ze', mail: 'ze@mail.com'}
-//     expect(obj).toHaveProperty('name');
-// });  
-
-// test('test 111', () => {
-//    let number = null;
-//    expect(number).toBeNull();
-//    number = 10;
-//    expect(number).not.toBeNull();
-//    expect(number).toBe(10);
-//    expect(number).toEqual(10);
-// });
-
-
+    it('Valida resposta informando token inválido', function() {
+      return request(urlcurrent + 'q=curitiba&appid=1111222233334445556666' )
+      .get('')
+      .expect(401)
+      });
 
 

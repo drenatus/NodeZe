@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test:E2E-chrome": "cross-env NIGHTWATCH_ENV=chrome npm test",
-    "test:E2E-firefox": "cross-env NIGHTWATCH_ENV=firefox npm test",
     "test:API": "npx jest",
     "test": "mkdirp report && cucumber-js --require cucumber.conf.js --require steps-definitions --format node_modules/cucumber-pretty --format json:report/cucumber_report.json"
   },

@@ -49,7 +49,7 @@ module.exports = {
                 args: [
                     'start-maximized', '--disable-infobars', '--disable-notifications', '--ignore-ssl-errors', "--allow-insecure-localhost"
                 ],
-
+                
                 
                 excludeSwitches: [
                     'enable-automation'
@@ -61,22 +61,22 @@ module.exports = {
         },
 
 
-         firefox: {
-            webdriver: {
-                start_process: true,
-                server_path: geckodriver.path,
-                port: 9515,
-            launch_url: "https://www.ze.delivery/",
-            desiredCapabilities: {
-                browserName: 'firefox'
-                // 'firefoxOptions': {
-                //  args: [
+        //  firefox: {
+        //     webdriver: {
+        //         start_process: true,
+        //         server_path: geckodriver.path,
+        //         port: 9515,
+        //     launch_url: "https://www.ze.delivery/",
+        //     desiredCapabilities: {
+        //         browserName: 'firefox'
+        //         // 'firefoxOptions': {
+        //         //  args: [
                     
-                // ]}
-                ,
-            }
-            }
-        },
+        //         // ]}
+        //         ,
+        //     }
+        //     }
+        // },
       
 
     }    

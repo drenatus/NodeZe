@@ -15,14 +15,17 @@
  E preencho o campo SENHA com a senha 'TesteZe2020'
  E clico no botão ENTRAR da pagina de login
  Então sou redirecionado para a Home Page, e vejo a mensagem 'Olá, Diogo'
- 
  Quando clico na opção CERVEJAS
  E clico no produto Brahma Duplo Malte
  E clico no botão + 6 un.
  E clico em ADICIONAR
- E então vejo aberta a modal SACOLA
+ 
+ E vejo aberta a modal SACOLA
  E clico no botão CONTINUAR COMPRA
- E clico na opção DINHEIRO 
+ E sou direcionada para a página de CHECKOUT
+ E clico no botão SELECIONAR FORMA DE PAGAMENTO
+ E sou direcionado para a PÁGINA DE PAGAMENTO
+ E clico na opção DINHEIRO
  Então vejo o campo VALOR DO SEU PEDIDO com o total de R$ '20,73'
 
 
